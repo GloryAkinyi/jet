@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">JetpackComposeCourseOutline</string>
+    <string name="title_activity_selection_control">SelectionControlActivity</string>
+    <string name="title_activity_modal_bottom_sheet_layout">ModalBottomSheetLayoutActivity</string>
+    <string name="title_activity_intent">IntentActivity</string>
+    <string name="title_activity_imageupload">ImageuploadActivity</string>
+    <string name="title_activity_alerter">AlerterActivity</string>
+    <string name="title_activity_image_picker">ImagePickerActivity</string>
+    <string name="title_activity_imagecapture">ImagecaptureActivity</string>
+    <string name="title_activity_registration_form">RegistrationForm</string>
+    <string name="title_activity_scaffold">Scaffold</string>
+    <string name="title_activity_webview">WebviewActivity</string>
+    <string name="title_activity_splashscreen">SplashscreenActivity</string>
+    <string name="title_activity_list">ListActivity</string>
+    <string name="title_activity_lazycolumnlist">LazycolumnlistActivity</string>
+    <string name="title_activity_intents">IntentsActivity</string>
+    <string name="title_activity_lottie_animation">LottieAnimationActivity</string>
+</resources>

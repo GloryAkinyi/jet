@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.JetpackComposeCourseOutline"
+        tools:targetApi="31">
+        <activity
+            android:name=".LottieAnimationActivity"
+            android:exported="false"
+            android:label="@string/title_activity_lottie_animation"
+            android:theme="@style/Theme.JetpackComposeCourseOutline" />
+        <activity
+            android:name=".IntentsActivity"
+            android:exported="false"
+            android:label="@string/title_activity_intents"
+            android:theme="@style/Theme.JetpackComposeCourseOutline" />
+        <activity
+            android:name=".ScaffoldActivity"
+            android:exported="false"
+            android:label="@string/title_activity_scaffold"
+            android:theme="@style/Theme.JetpackComposeCourseOutline" />
+        <activity
+            android:name=".LazycolumnlistActivity"
+            android:exported="false"
+            android:label="@string/title_activity_lazycolumnlist"
+            android:theme="@style/Theme.JetpackComposeCourseOutline" />
+        <activity
+            android:name=".ListActivity"
+            android:exported="false"
+            android:label="@string/title_activity_list"
+            android:theme="@style/Theme.JetpackComposeCourseOutline" />
+        <activity
+            android:name=".SplashscreenActivity"
+            android:exported="true"
+            android:label="@string/title_activity_splashscreen"
+            android:theme="@style/Theme.JetpackComposeCourseOutline">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".WebviewActivity"
+            android:exported="false"
+            android:label="@string/title_activity_webview"
+            android:theme="@style/Theme.JetpackComposeCourseOutline" />
+        <activity
+            android:name=".RegistrationForm"
+            android:exported="false"
+            android:label="@string/title_activity_registration_form"
+            android:theme="@style/Theme.JetpackComposeCourseOutline" />
+        <activity
+            android:name=".ImagecaptureActivity"
+            android:exported="false"
+            android:label="@string/title_activity_imagecapture"
+            android:theme="@style/Theme.JetpackComposeCourseOutline" />
+        <activity
+            android:name=".ImagePickerActivity"
+            android:exported="false"
+            android:label="@string/title_activity_image_picker"
+            android:theme="@style/Theme.JetpackComposeCourseOutline" />
+        <activity
+            android:name=".AlerterActivity"
+            android:exported="false"
+            android:label="@string/title_activity_alerter"
+            android:theme="@style/Theme.JetpackComposeCourseOutline" />
+        <activity
+            android:name=".ImageuploadActivity"
+            android:exported="false"
+            android:label="@string/title_activity_imageupload"
+            android:theme="@style/Theme.JetpackComposeCourseOutline" />
+        <activity
+            android:name=".ui.theme.IntentActivity"
+            android:exported="false"
+            android:label="@string/title_activity_intent"
+            android:theme="@style/Theme.JetpackComposeCourseOutline" />
+        <activity
+            android:name=".SelectionControlActivity"
+            android:exported="false"
+            android:label="@string/title_activity_selection_control"
+            android:theme="@style/Theme.JetpackComposeCourseOutline" />
+        <activity
+            android:name=".MainActivity"
+            android:exported="true"
+            android:label="@string/app_name"
+            android:theme="@style/Theme.JetpackComposeCourseOutline" />
+    </application>
+
+</manifest>
