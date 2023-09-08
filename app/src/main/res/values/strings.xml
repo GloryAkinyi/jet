@@ -15,4 +15,7 @@
     <string name="title_activity_lazycolumnlist">LazycolumnlistActivity</string>
     <string name="title_activity_intents">IntentsActivity</string>
     <string name="title_activity_lottie_animation">LottieAnimationActivity</string>
+    <string name="title_activity_insert">InsertActivity</string>
+    <string name="title_activity_course_details">CourseDetailsActivity</string>
+    <string name="title_activity_update_course">UpdateCourse</string>
 </resources>

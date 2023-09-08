@@ -43,7 +43,7 @@ class SplashscreenActivity : ComponentActivity() {
             val coroutineScope = rememberCoroutineScope()
             coroutineScope.launch{
                 delay(1000)
-                mContext.startActivity(Intent(mContext, ScaffoldActivity::class.java))
+                mContext.startActivity(Intent(mContext, MainActivity::class.java))
                 finish()
 
             }

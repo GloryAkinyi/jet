@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
+    <!-- Permissions for internet -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
         android:allowBackup="true"
@@ -12,6 +15,21 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.JetpackComposeCourseOutline"
         tools:targetApi="31">
+        <activity
+            android:name=".UpdateCourse"
+            android:exported="false"
+            android:label="@string/title_activity_update_course"
+            android:theme="@style/Theme.JetpackComposeCourseOutline" />
+        <activity
+            android:name=".CourseDetailsActivity"
+            android:exported="false"
+            android:label="@string/title_activity_course_details"
+            android:theme="@style/Theme.JetpackComposeCourseOutline" />
+        <activity
+            android:name=".InsertActivity"
+            android:exported="false"
+            android:label="@string/title_activity_insert"
+            android:theme="@style/Theme.JetpackComposeCourseOutline" />
         <activity
             android:name=".LottieAnimationActivity"
             android:exported="false"

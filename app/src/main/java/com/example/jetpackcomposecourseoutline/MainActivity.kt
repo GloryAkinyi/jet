@@ -280,7 +280,7 @@ fun CardDemo() {
 
         Spacer(modifier = Modifier.height(10.dp))
 
-        Button(onClick = { mcontext.startActivity(Intent(mcontext,AlerterActivity::class.java))},
+        Button(onClick = { mcontext.startActivity(Intent(mcontext,InsertActivity::class.java))},
             shape = CutCornerShape(3.dp),
             colors = ButtonDefaults.buttonColors(Color.Black),
             modifier = Modifier.padding(start = 260.dp)) {
