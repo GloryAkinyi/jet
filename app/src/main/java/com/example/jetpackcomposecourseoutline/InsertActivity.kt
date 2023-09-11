@@ -60,6 +60,7 @@ fun firebaseUI() {
     val courseName = remember { mutableStateOf("") }
     val courseDuration = remember { mutableStateOf("") }
     val courseDescription = remember { mutableStateOf("") }
+    val trainer = remember { mutableStateOf("") }
 
     Column(modifier = Modifier
         .fillMaxHeight()
@@ -125,6 +126,17 @@ fun firebaseUI() {
                 singleLine = true,
             )
 
+            TextField(
+                value = trainer.value,
+                onValueChange = { trainer.value = it },
+                placeholder = { Text(text = "Enter name of the trainer") },
+                modifier = Modifier
+                    .padding(16.dp)
+                    .fillMaxWidth(),
+                textStyle = TextStyle(color = Color.Black, fontSize = 15.sp),
+                singleLine = true,
+            )
+
             Spacer(modifier = Modifier.height(10.dp))
 
             Button(
@@ -135,16 +147,21 @@ fun firebaseUI() {
                     } else if (TextUtils.isEmpty(courseDuration.value.toString())) {
                         Toast.makeText(context, "Please enter course Duration", Toast.LENGTH_SHORT)
                             .show()
-                    } else if (TextUtils.isEmpty(courseDescription.value.toString())) {
+                    }
+                    else if (TextUtils.isEmpty(courseDuration.value.toString())) {
+                        Toast.makeText(context, "Please enter name of trainer", Toast.LENGTH_SHORT)
+                            .show()
+                    }
+                    else if (TextUtils.isEmpty(courseDescription.value.toString())) {
                         Toast.makeText(
                             context,
-                            "Please enter course descritpion",
+                            "Please enter course description",
                             Toast.LENGTH_SHORT
                         )
                             .show()
                     } else {
                         addDataToFirebase(
-                            courseName.value, courseDuration.value, courseDescription.value, context
+                            courseName.value, courseDuration.value, courseDescription.value, trainer.value, context
                         )
                     }
                 },
@@ -175,17 +192,16 @@ fun firebaseUI() {
     }
 }
 
-fun addDataToFirebase(courseName: String, courseDuration: String, courseDescription: String,
-    context: Context
+fun addDataToFirebase(courseName: String, courseDuration: String, courseDescription: String,trainer:String, context: Context
 ) {
     val db: FirebaseFirestore = FirebaseFirestore.getInstance()
     val dbCourses: CollectionReference = db.collection("Courses")
-    val courses = Course(courseName, courseDescription, courseDuration)
+    val courses = Course(courseName, courseDescription, courseDuration,trainer)
     dbCourses.add(courses).addOnSuccessListener {
-        Toast.makeText(context, "Your Course has been added to Firebase Firestore", Toast.LENGTH_SHORT).show()
+        Toast.makeText(context, "Successfully added a course", Toast.LENGTH_SHORT).show()
 
     }.addOnFailureListener { e ->
-        Toast.makeText(context, "Fail to add course", Toast.LENGTH_SHORT).show()
+        Toast.makeText(context, "Failed to add course", Toast.LENGTH_SHORT).show()
     }
 
 }

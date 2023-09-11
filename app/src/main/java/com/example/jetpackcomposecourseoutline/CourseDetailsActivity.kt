@@ -10,6 +10,7 @@ import androidx.activity.compose.setContent
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -105,15 +106,18 @@ fun firebaseUI(context: Context, courseList: SnapshotStateList<Courses?>) {
                 Card(onClick = {
                     val i = Intent(context, UpdateCourse::class.java)
                     i.putExtra("courseName", item?.courseName)
+                    i.putExtra("trainer", item?.trainer)
                     i.putExtra("courseDuration", item?.courseDuration)
                     i.putExtra("courseDescription", item?.courseDescription)
                     i.putExtra("courseID", item?.courseID)
                     context.startActivity(i)
                     Toast.makeText(context, courseList[index]?.courseName + " selected..", Toast.LENGTH_SHORT).show()
                     },
-                    modifier = Modifier.padding(8.dp)
+                    modifier = Modifier.padding(8.dp),
                 ) {
-                    Column(modifier = Modifier.padding(8.dp).fillMaxWidth()
+                    Column(modifier = Modifier
+                        .padding(8.dp)
+                        .fillMaxWidth()
                     ) {
                         Spacer(modifier = Modifier.width(5.dp))
 
@@ -127,13 +131,14 @@ fun firebaseUI(context: Context, courseList: SnapshotStateList<Courses?>) {
                                     fontSize = 25.sp, fontWeight = FontWeight.Bold
                                 )
                             )
+
                         }
 
                         Spacer(modifier = Modifier.height(5.dp))
 
-                        courseList[index]?.courseDuration?.let {
+                        Row {
                             Text(
-                                text = it,
+                                text = "Course Duration : ",
                                 modifier = Modifier.padding(4.dp),
                                 color = Color.Black,
                                 textAlign = TextAlign.Center,
@@ -141,19 +146,75 @@ fun firebaseUI(context: Context, courseList: SnapshotStateList<Courses?>) {
                                     fontSize = 15.sp
                                 )
                             )
+
+
+                            Spacer(modifier = Modifier.width(5.dp))
+                            courseList[index]?.courseDuration?.let {
+                                Text(
+                                    text = it,
+                                    modifier = Modifier.padding(4.dp),
+                                    color = Color.Black,
+                                    textAlign = TextAlign.Center,
+                                    style = TextStyle(
+                                        fontSize = 15.sp
+                                    )
+                                )
+                            }
                         }
                         Spacer(modifier = Modifier.width(5.dp))
 
-                        courseList[index]?.courseDescription?.let {
+
+                        Row {
                             Text(
-                                text = it,
+                                text = "Course Description : ",
                                 modifier = Modifier.padding(4.dp),
                                 color = Color.Black,
                                 textAlign = TextAlign.Center,
-                                style = TextStyle(fontSize = 15.sp)
+                                style = TextStyle(
+                                    fontSize = 15.sp
+                                )
                             )
+
+
+                            Spacer(modifier = Modifier.width(5.dp))
+                            courseList[index]?.courseDescription?.let {
+                                Text(
+                                    text = it,
+                                    modifier = Modifier.padding(4.dp),
+                                    color = Color.Black,
+                                    textAlign = TextAlign.Center,
+                                    style = TextStyle(fontSize = 15.sp)
+                                )
+                            }
+                        }
+
+                        Spacer(modifier = Modifier.height(5.dp))
+
+                        Row {
+                            Text(
+                                text = "Name of trainer : ",
+                                modifier = Modifier.padding(4.dp),
+                                color = Color.Black,
+                                textAlign = TextAlign.Center,
+                                style = TextStyle(
+                                    fontSize = 15.sp
+                                )
+                            )
+
+
+                            Spacer(modifier = Modifier.width(5.dp))
+                            courseList[index]?.trainer?.let {
+                                Text(
+                                    text = it,
+                                    modifier = Modifier.padding(4.dp),
+                                    color = Color.Black,
+                                    textAlign = TextAlign.Center,
+                                    style = TextStyle(fontSize = 15.sp)
+                                )
+                            }
                         }
                     }
+
                 }
             }
 
